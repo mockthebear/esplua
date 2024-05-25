@@ -1,0 +1,23 @@
+{
+    "name": "EspLua",
+    "version": "1.0.0",
+    "description": "Lua ported for esp32 platforms",
+    "keywords": "esp32, esp32s2, esp32s3, lua, script",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mockthebear/esplua"
+    },
+    "authors": {
+        "name": "Mockthebear",
+        "url": "https://github.com/mockthebear/esplua"
+    },
+    "frameworks": [
+        "espidf"
+    ],
+    "platforms": [
+        "espressif32"
+    ],
+    "headers": [
+        "esplua.h"
+    ]
+}
