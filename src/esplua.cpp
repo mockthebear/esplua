@@ -3,12 +3,6 @@
 #include <SD.h>
 #include <FFat.h>
 #include <SPIFFS.h>
-std::string LuaManager::lastCalled = "none";
-
-std::vector<LuaCFunctionLambda*> LuaManager::ptrs;
-
-lua_State *LuaManager::L;
-std::vector<std::function<void()>> LuaManager::eraseLambdas;
 
 //Make sure that any lua scripts use the psram instead of the sram
 static void *psram_lua_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {
@@ -230,7 +224,6 @@ EspLua::EspLua(bool use_psram) {
   }else{
     _state = luaL_newstate();
   }
-  LuaManager::L = _state;
   luaL_openlibs(_state);
 
   lua_setserial_esp(_state, custom_serial); 
